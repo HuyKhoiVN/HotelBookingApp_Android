@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="18dp"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:background="#DDE6ED">
+
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+            <!-- Message -->
+            <TextView
+                android:id="@+id/tv_Message"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="Nội dung thông báo hoặc mô tả"
+                android:textColor="#7C6D6D"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/chkIsRead"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+      </LinearLayout>
+
+      <!-- CreatedDate -->
+      <TextView
+          android:id="@+id/tv_createdDate"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentEnd="true"
+          android:layout_alignParentBottom="true"
+          android:text="1 giờ trước"
+          android:textColor="#BDBDBD"
+          android:textSize="12sp" />
+
+</LinearLayout>

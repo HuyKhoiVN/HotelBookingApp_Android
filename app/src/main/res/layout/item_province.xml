@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#E3F2FD">
+
+    <TextView
+        android:id="@+id/tvProvinceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên tỉnh"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="4dp" />
+
+    <TextView
+        android:id="@+id/tvAvailableRooms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số phòng khả dụng"
+        android:padding="4dp" />
+</LinearLayout>

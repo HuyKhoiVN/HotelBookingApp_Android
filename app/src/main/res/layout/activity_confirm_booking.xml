@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#E3F2FD"
+    tools:context=".Activity.ConfirmBookingActivity">
+    <!-- Thanh tiêu đề -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="16dp">
+
+        <!-- Icon quay lại -->
+        <ImageView
+            android:id="@+id/confirm_imgBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Quay lại"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Tiêu đề -->
+        <TextView
+            android:id="@+id/confirm_tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xác Nhận Đặt Phòng"
+            android:textSize="22sp"
+            android:textColor="#0D47A1"
+            android:textStyle="bold"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Ảnh phòng -->
+    <ImageView
+        android:id="@+id/confirm_imgRoom"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/vungtau"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Thông tin phòng -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical">
+
+        <!-- Tên phòng -->
+        <TextView
+            android:id="@+id/confirm_tvRoomName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MOTEL HN"
+            android:textSize="18sp"
+            android:textColor="#0D47A1"
+            android:layout_marginEnd="8dp"
+            android:textStyle="bold" />
+
+        <!-- Số sao đánh giá -->
+        <TextView
+            android:id="@+id/confirm_tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.9 ★"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFD700"
+            android:drawablePadding="4dp" />
+    </LinearLayout>
+
+    <!-- Địa chỉ phòng -->
+    <TextView
+        android:id="@+id/confirm_tvRoomAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="204 Phú Xuân, Thanh Khê, Đà Nẵng"
+        android:textSize="16sp"
+        android:textColor="#616161"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Ngày nhận phòng và trả phòng -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/confirm_tvCheckInDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nhận phòng: 11/17/2024"
+            android:textSize="16sp"
+            android:textColor="#616161" />
+
+        <TextView
+            android:id="@+id/confirm_tvCheckOutDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Trả phòng: 12/11/2024"
+            android:textSize="16sp"
+            android:textColor="#616161" />
+    </LinearLayout>
+
+    <!-- Hình thức thanh toán -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hình thức thanh toán: "
+            android:textSize="18sp"
+            android:textColor="#D32F2F"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/confirm_tvPaymentMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chuyển khoản"
+            android:textSize="18sp"
+            android:textColor="#D32F2F"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+
+    <!-- Tổng tiền -->
+    <TextView
+        android:id="@+id/confirm_tvTotalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tổng tiền: 750,000 VND"
+        android:textSize="18sp"
+        android:textColor="#0D47A1"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Thông tin khách hàng -->
+    <TextView
+        android:id="@+id/confirm_tvCustomerInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin khách hàng"
+        android:textSize="16sp"
+        android:textColor="#0D47A1"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Họ và tên -->
+    <TextView
+        android:id="@+id/confirm_etFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Họ và Tên"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Số điện thoại -->
+    <TextView
+        android:id="@+id/confirm_etPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Số Điện Thoại"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Email -->
+    <TextView
+        android:id="@+id/confirm_etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Checkbox đồng ý điều khoản -->
+    <CheckBox
+        android:id="@+id/confirm_cbAgree"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Tôi đồng ý với điều khoản và điều kiện"
+        android:textColor="#616161"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Nút xác nhận -->
+    <Button
+        android:id="@+id/confirm_btnConfirmBooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xác Nhận"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#1976D2"
+        android:padding="12dp"
+        android:textSize="18sp" />
+</LinearLayout>

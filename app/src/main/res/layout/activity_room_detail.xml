@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3F2FD"
+    tools:context=".Activity.RoomDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E3F2FD"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Thanh tiêu đề với nút quay lại và yêu thích -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/btnBackSearch"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_back"
+                    android:contentDescription="Quay lại" />
+
+                <TextView
+                    android:id="@+id/tvRoomNameDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MOTEL HN"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#0D47A1" />
+
+
+            </LinearLayout>
+
+            <!-- Hình ảnh khách sạn và nút điều hướng -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <!-- Ảnh hiện tại -->
+                <ImageView
+                    android:id="@+id/imgRoomDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/ic_hotel"
+                    android:contentDescription="Ảnh khách sạn"
+                    android:layout_centerInParent="true" />
+
+                <!-- Nút Previous -->
+                <ImageView
+                    android:id="@+id/btnPreDetail"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_arrow_left"
+                    android:contentDescription="Previous"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp" />
+
+                <!-- Nút Next -->
+                <ImageView
+                    android:id="@+id/btnNextDetail"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:contentDescription="Next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp" />
+            </RelativeLayout>
+
+
+            <!-- Thời gian nhận và trả phòng -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Thời gian nhận"
+                    android:gravity="center"
+                    android:textColor="#0D47A1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Thời gian trả"
+                    android:gravity="center"
+                    android:textColor="#0D47A1" />
+            </LinearLayout>
+
+            <!-- Thời gian nhận và trả phòng -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/tvCheckInTimeDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="11/17/2024"
+                    android:gravity="center"
+                    android:textColor="#0D47A1" />
+
+                <TextView
+                    android:id="@+id/tvCheckOutTimeDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="12/11/2024"
+                    android:gravity="center"
+                    android:textColor="#0D47A1" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/errorMessageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_dark"
+                android:text=""
+                android:layout_marginTop="5dp"
+                android:visibility="gone"/>
+
+            <!-- Loai phong -->
+            <TextView
+                android:id="@+id/tvRoomTypeDetail"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loai phong:"
+                android:textColor="#616161"
+                android:layout_marginTop="16dp" />
+
+            <!-- Giá phòng -->
+            <TextView
+                android:id="@+id/tvRoomPriceDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giá cho 1 đêm: 750.000 VND"
+                android:textStyle="bold"
+                android:textColor="#D32F2F"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp" />
+
+            <!-- Nút bản đồ -->
+            <fragment
+                android:id="@+id/mapFragment"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"/>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center" />
+
+
+
+            <!-- Địa chỉ -->
+            <TextView
+                android:id="@+id/tvRoomAddressDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Địa chỉ: 123 Phú Thượng, Thanh Khê, Đà Nẵng"
+                android:textColor="#616161"
+                android:layout_marginTop="16dp" />
+
+            <!-- Tiện nghi -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tiện Nghi"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#0D47A1"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/tvRoomDescriptionDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Điều hòa nhiệt độ, Có Wifi, Chỗ đỗ xe"
+                android:textColor="#616161"
+                android:layout_marginTop="8dp" />
+
+            <!-- Đánh giá -->
+            <TextView
+                android:id="@+id/tvRoomRatingDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đánh giá"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#0D47A1"
+                android:layout_marginTop="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewReviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
+
+            <!-- Nút chọn phòng -->
+            <Button
+                android:id="@+id/btnChoose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chọn phòng"
+                android:backgroundTint="#1976D2"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SearchRoomActivity">
+
+    <!-- Nội dung chính -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#E3F2FD"
+        android:layout_marginBottom="56dp">
+
+        <!-- Tiêu đề -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BOOKPHONG.VN"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#0D47A1"
+            android:padding="8dp" />
+
+        <!-- Các trường tìm kiếm -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <!-- Vị trí -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_background"
+                android:padding="0dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <!-- Icon tìm kiếm -->
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_search"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Icon tìm kiếm" />
+
+                <!-- EditText nhập vị trí -->
+                <EditText
+                    android:inputType="text"
+                    android:id="@+id/etLocationSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:hint="Vị trí"
+                    android:background="@null"
+                    android:padding="0dp"
+                    android:fontFamily="sans-serif"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_background"
+                android:padding="0dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <!-- EditText nhập Ngày Nhận -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_calendar"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Icon lịch" />
+
+                    <EditText
+                        android:id="@+id/etCheckInDateSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:hint="Ngày Nhận"
+                        android:background="@null"
+                        android:focusable="false"
+                        android:padding="0dp"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <!-- Khoảng trống giữa hai EditText -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="60dp"/>
+
+                <!-- EditText nhập Ngày Trả -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_calendar"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Icon lịch" />
+
+                    <EditText
+                        android:id="@+id/etCheckOutDateSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:hint="Ngày Trả"
+                        android:background="@null"
+                        android:focusable="false"
+                        android:padding="0dp"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_background"
+                android:padding="0dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <!-- Icon bên trái -->
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_account"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Icon" />
+
+                <!-- EditText nhập số lượng người -->
+                <EditText
+                    android:id="@+id/etPeopleNumberSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:hint="Số Lượng Người"
+                    android:background="@null"
+                    android:padding="0dp"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <!-- Nút Tìm kiếm -->
+            <Button
+                android:id="@+id/btnSearchSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tìm"
+                android:backgroundTint="#1976D2"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:layout_marginTop="0dp"/>
+
+        </LinearLayout>
+
+        <!-- TextView hiển thị tổng số phòng tìm được -->
+        <TextView
+            android:id="@+id/tvRoomCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Tổng số phòng: x"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#0D47A1"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="8dp" />
+
+
+        <!-- Bộ lọc -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/filter_price"
+                android:layout_width="0dp"
+                android:backgroundTint="#00BCD4"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Giá ⌄"
+                android:padding="12dp"
+                android:textColor="#0D47A1" />
+
+            <Button
+                android:id="@+id/filter_rating"
+                android:layout_width="0dp"
+                android:backgroundTint="#00BCD4"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Đánh Giá ⌄"
+                android:padding="12dp"
+                android:textColor="#0D47A1"
+                android:layout_marginStart="8dp" />
+
+            <Button
+                android:id="@+id/filter_amenities"
+                android:layout_width="0dp"
+                android:backgroundTint="#00BCD4"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Tiện ích ⌄"
+                android:padding="12dp"
+                android:textColor="#0D47A1"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewRoomsSearch"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+    <!-- Bottom Navigation Menu cố định ở cuối màn hình -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
